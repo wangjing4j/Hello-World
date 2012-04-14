@@ -1,0 +1,13 @@
+#Sat Apr 14 17:28:57 CST 2012
+WARNING=DO NOT MODIFY THIS FILE IF YOU DON'T UNDERSTAND
+defaultDestination=H\:/.ssh/Hello-World/RssBot
+defaultVariables=
+eclipse.preferences.version=1
+includeTeamPrivateFiles=false
+map|0=/|,|,|.settings/;bin/;conf/;lib/;src/|,
+map|1=.settings|,|,|,|,
+map|2=bin|,|,|,|,
+map|3=conf|,|,|,|,
+map|4=lib|,|,|,|,
+map|5=src|,|,|,|,
+useCurrentDateForDestinationFiles=false
