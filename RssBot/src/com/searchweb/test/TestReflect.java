@@ -1,10 +1,6 @@
 package com.searchweb.test;
 
-import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.net.URLDecoder;
-
-import com.searchweb.core.AStrategy;
 
 public class TestReflect {
 
@@ -28,7 +24,6 @@ public class TestReflect {
 //		AStrategy strat = (AStrategy) constructor.newInstance("baidu");
 //		System.out.println(strat.strategyName);
 		
-		System.out.println(URLDecoder.decode("http://top.baidu.com/detail.php?b=1&w=%CD%F5%D0%A1%B2%A8"));
 	}
 
 }

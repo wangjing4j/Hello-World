@@ -2,33 +2,55 @@ package com.searchweb.bot;
 
 import java.security.GeneralSecurityException;
 
+import javax.annotation.Resource;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Component;
+
 import com.gargoylesoftware.htmlunit.BrowserVersion;
 import com.gargoylesoftware.htmlunit.NicelyResynchronizingAjaxController;
 import com.gargoylesoftware.htmlunit.ThreadedRefreshHandler;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.searchweb.db.IRepository;
+import com.searchweb.db.MySqlRepository;
 import com.searchweb.entity.Article;
 
+@Component
 public abstract class Abot implements Runnable {
+	@Resource
+	MySqlRepository repo1;
+	
+	public static ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 	protected WebClient client = null;
 	
-	public static IRepository repo;
+	public IRepository repo;
 	
 	public static boolean isInitLock = false;
 	
 	public String keyword;
 	
 	public String url;
+	
+	public Abot() {
+//		new Exception();
+	}
 
 	public Abot(String keyword, String url) {
 		super();
 		this.keyword = keyword;
 		this.url = url;
+		
+		Abot bot = context.getBean(Abot.class);
+		bot.sayA();
 		if(!isInitLock) {
-			this.initialize();
+//			repo.add(new Article());
+//			this.initialize();
 //			this.loadRssMap(strategyName);
 		}
 	}
+	public abstract void sayA();
+
 	public void setClient() {
 		if (this.client == null) {
 			client = new WebClient(BrowserVersion.FIREFOX_3);

@@ -3,13 +3,20 @@ package com.searchweb.bot;
 import java.io.IOException;
 import java.net.MalformedURLException;
 
+import org.springframework.stereotype.Component;
+
 import com.gargoylesoftware.htmlunit.FailingHttpStatusCodeException;
 import com.gargoylesoftware.htmlunit.html.HtmlAnchor;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import com.searchweb.entity.Article;
 
+@Component("baiduBot")
 public class BaiduBot extends Abot{
-
+	
+	public BaiduBot() {
+		super();
+	}
+	
 	public BaiduBot(String keyword, String url) {
 		super(keyword, url);
 	}
@@ -35,4 +42,8 @@ public class BaiduBot extends Abot{
 		return null;
 	}
 
+	@Override
+	public void sayA() {
+		repo1.add(new Article());
+	}
 }

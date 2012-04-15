@@ -9,9 +9,7 @@ import java.util.Set;
 
 import com.gargoylesoftware.htmlunit.FailingHttpStatusCodeException;
 import com.gargoylesoftware.htmlunit.xml.XmlPage;
-import com.searchweb.bot.BaiduBot;
 import com.searchweb.db.IRepository;
-import com.searchweb.entity.Article;
 
 public class BaiduStrategy extends AStrategy {
 	public static boolean hasLoadRssMap = false;
